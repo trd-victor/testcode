@@ -1,0 +1,10 @@
+version: "Apple Swift version 2.2 (swiftlang-703.0.18.8 clang-703.0.31)"
+options: "0606b58f593d939c7f83b0650af7d810"
+build_time: [576830184, 348419000]
+inputs:
+  "/Applications/XAMPP/xamppfiles/htdocs/testcode/happ/RegisterController.swift": [576829876, 0]
+  "/Applications/XAMPP/xamppfiles/htdocs/testcode/happ/AccountViewController.swift": [576829876, 0]
+  "/Applications/XAMPP/xamppfiles/htdocs/testcode/happ/SignupViewController.swift": [576829876, 0]
+  "/Applications/XAMPP/xamppfiles/htdocs/testcode/happ/ChangePassViewController.swift": [576829876, 0]
+  "/Applications/XAMPP/xamppfiles/htdocs/testcode/happ/ViewController.swift": [576829876, 0]
+  "/Applications/XAMPP/xamppfiles/htdocs/testcode/happ/AppDelegate.swift": [576829876, 0]
