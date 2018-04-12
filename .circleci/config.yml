@@ -1,10 +1,21 @@
 jobs:
   build:
-    deployment:
-      staging:
-        branch: master
-        heroku:
-          appname: testcode
+    docker:
+      - image: debian:stretch
+    steps:
+      - checkout
+      - run:
+          name: Greeting
+          command: echo Hello, world.
+      - run:
+          name: Print the Current Time
+          command: date
+
+deployment:
+  staging:
+    branch: master
+    heroku:
+      appname: testcode
 
 machine:
   xcode:
