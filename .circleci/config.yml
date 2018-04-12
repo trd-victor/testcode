@@ -10,21 +10,6 @@ jobs:
       - run:
           name: Print the Current Time
           command: date
-      - test:
-          override:
-            # - swift test
-            - set -o pipefail &&
-            xcodebuild
-              CODE_SIGNING_REQUIRED=NO
-              CODE_SIGN_IDENTITY=
-              PROVISIONING_PROFILE=
-              -sdk iphonesimulator
-              -destination 'platform=iOS Simulator,OS=9.0,name=iPhone 6'
-              -workspace project.xcworkspace
-              -scheme "happ"
-              clean build test |
-            tee $CIRCLE_ARTIFACTS/xcode_raw.log |
-            xcpretty --color --report junit --output $CIRCLE_TEST_REPORTS/xcode/results.xml
 
 deployment:
   staging:
@@ -36,18 +21,18 @@ machine:
   xcode:
     version: 7.3.1
 
-# test:
-#   override:
-#     # - swift test
-#     - set -o pipefail &&
-#       xcodebuild
-#         CODE_SIGNING_REQUIRED=NO
-#         CODE_SIGN_IDENTITY=
-#         PROVISIONING_PROFILE=
-#         -sdk iphonesimulator
-#         -destination 'platform=iOS Simulator,OS=9.0,name=iPhone 6'
-#         -workspace project.xcworkspace
-#         -scheme "happ"
-#         clean build test |
-#       tee $CIRCLE_ARTIFACTS/xcode_raw.log |
-#       xcpretty --color --report junit --output $CIRCLE_TEST_REPORTS/xcode/results.xml
+test:
+  override:
+    # - swift test
+    - set -o pipefail &&
+      xcodebuild
+        CODE_SIGNING_REQUIRED=NO
+        CODE_SIGN_IDENTITY=
+        PROVISIONING_PROFILE=
+        -sdk iphonesimulator
+        -destination 'platform=iOS Simulator,OS=9.0,name=iPhone 6'
+        -workspace project.xcworkspace
+        -scheme "happ"
+        clean build test |
+      tee $CIRCLE_ARTIFACTS/xcode_raw.log |
+      xcpretty --color --report junit --output $CIRCLE_TEST_REPORTS/xcode/results.xml
