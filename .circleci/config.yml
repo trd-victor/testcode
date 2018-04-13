@@ -8,11 +8,11 @@ jobs:
           name: Print the Current Time
           command: date
 
-deployment:
-  staging:
-    branch: master
-    heroku:
-      appname: testcode
+# deployment:
+#   staging:
+#     branch: master
+#     heroku:
+#       appname: testcode
 
 machine:
   xcode:
