@@ -14,7 +14,7 @@ machine:
 
 test:
   override:
-    # - swift test
+    - swift test
     - set -o pipefail &&
       xcodebuild
         CODE_SIGNING_REQUIRED=NO
