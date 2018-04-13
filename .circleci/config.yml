@@ -1,6 +1,6 @@
 jobs:
   build:
-    macos:
+    docker:
       - image: debian:stretch
     steps:
       - checkout
